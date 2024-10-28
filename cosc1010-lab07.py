@@ -1,10 +1,10 @@
-# Your Name Here
+# Dominick Larson
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date: 10/28/2024
+# Lab 07
+# Lab Section: 14
 # Sources, people worked with, help given to: 
-# your
+# I got everything to work except dividing with the calculator
 # comments
 # here
 
@@ -16,10 +16,27 @@
     # To do so you can use the methods `.isdigit()` or `.isnumeric()`
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
-
-factorial = 1
-
-print(f"The result of the factorial based on the given bound is {factorial}")
+def Factorial(In):
+    if In < 0:
+        return "the Upper Bound cannot be negative"
+    elif In == 0:
+        return 1
+    else:
+        n = 1
+        total = 1
+        while n <= In:
+            total *= n
+            n += 1
+        return total
+print("Enter an upper bound")
+In = (input())
+while In.isdigit() is not True:
+        print("Upper Bound must be a Number")
+        print("Enter an upper bound")
+        In = (input())
+else:
+    In = int(In)
+    print(f"The result of the factorial based on the given bound is {Factorial(In)}")
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -36,8 +53,20 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
-
+print("Enter a number")
+add = (input())
+num = add
 num_sum = 0 
+while add != "quit".lower():
+    while add.isdigit() is not True:
+        print("number must be a Number")
+        print("Enter a number")
+        add = (input())
+    else:
+        num = int(add)
+        num_sum += num
+        add = (input())
+print(num_sum)
 
 print(f"Your final sum is {num_sum}")
 
@@ -58,5 +87,64 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
-
-        
+print ("calculator")
+opp = (input())
+total = 0
+while opp != "exit".lower():
+    opp.split()
+    if "+" in opp:
+        one = opp[0]
+        one = int(one)
+        two = opp[2]
+        two = int(two)
+        total = one + two         
+        print(total)
+        print("New Calculation")
+        opp = (input())
+        print(opp)
+        total = 0
+    elif "-" in opp:
+        one = opp[0]
+        one = int(one)
+        two = opp[2]
+        two = int(two)
+        total = one - two      
+        print(total)
+        print("New Calculation")
+        opp = (input())
+        print(opp)
+        total = 0
+    elif "*" in opp:
+        one = opp[0]
+        one = int(one)
+        two = opp[2]
+        two = int(two)
+        total = one * two        
+        print(total)
+        opp = (input())
+        print("New Calculation")
+        print(opp)
+        total = 0
+    elif "/" in opp:
+        one = opp[0]
+        one = int(one)
+        two = opp[2]
+        two = int(two)
+        total = one / two         
+        print(total)
+        opp = (input())
+        print("New Calculation")
+        print(opp)
+        total = 0
+    elif "%" in opp:
+        one = opp[0]
+        one = int(one)
+        two = opp[2]
+        two = int(two)
+        total = one % two         
+        print(total)
+        opp = (input())
+        print("New Calculation")
+        print(opp)
+        total = 0
+    print("calculator off")
